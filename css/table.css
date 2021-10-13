@@ -1,0 +1,192 @@
+body {
+	font-family: arial;
+	margin: 0px;
+}
+
+/* table */
+div#redips-drag table {
+	background-color: #eee;
+	border-collapse: collapse;
+	margin: 7px;	
+}
+
+/* table cells */
+div#redips-drag td {
+	border: 1px solid navy;
+	height: 50px;
+	text-align: center;
+	font-size: 10pt;
+	padding: 2px;
+}
+
+/* table cells */
+div#redips-drag th {
+	border: 1px solid navy;
+	height: 50px;
+	text-align: center;
+	font-size: 10pt;
+	padding: 2px;
+}
+
+input{
+	margin: auto;
+	text-align: center;
+	width: 87px;
+	height: 35px;
+	line-height: 35px;
+}
+
+/* drag object (DIV inside table cell) */
+.redips-drag {
+	margin: auto;
+	text-align: center;
+	width: 87px;
+	height: 35px;
+	line-height: 35px;
+	border: 2px solid SteelBlue;
+	background-color: white;
+}
+
+
+/* Cálculos células */
+.total{
+	float:left;
+  }
+
+/* Menu Fkutuante */
+.fab{
+  position: fixed;
+  bottom:10px;
+  right:10px;
+}
+
+.fab button{
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border-radius: 30px;
+  background-color: #cb60b3;
+  border: none;
+  box-shadow: 0 1px 5px rgba(0,0,0,.4);
+  font-size: 24px;
+  color: white;
+    
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.fab button.main{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #009688;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+}
+
+.fab button.main:before{
+  content: '⏚';
+}
+
+.fab ul{
+  position:absolute;
+  bottom: 0;
+  right: 0;
+  padding:0;
+  padding-right:5px;
+  margin:0;
+  list-style:none;
+  z-index:10;
+  
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.fab ul li{
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  margin-bottom: -10%;
+  opacity: 0;
+  
+  -webkit-transition: .3s ease-out;
+  -moz-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.fab ul li label{
+  margin-right:10px;
+  white-space: nowrap;
+  display: block;
+  margin-top: 10px;
+  padding: 5px 8px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2);
+  border-radius:3px;
+  height: 18px;
+  font-size: 16px;
+  pointer-events: none;
+  opacity:0;
+  
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.fab button.main:active,
+.fab button.main:focus{
+  outline: none;
+  background-color: #009688;
+  box-shadow: 0 3px 8px rgba(0,0,0,.5);
+ }
+ 
+.fab button.main:active:before,
+.fab button.main:focus:before{
+  content: '↑';
+}
+
+.fab button.main:active + ul,
+.fab button.main:focus + ul{
+  bottom: 70px;
+}
+
+.fab button.main:active + ul li,
+.fab button.main:focus + ul li{
+  margin-bottom: 10px;
+  opacity: 1;
+}
+
+.fab button.main:active + ul li:hover label,
+.fab button.main:focus + ul li:hover label{
+  opacity: 1;
+}
+
+/* trash cell */
+.redips-trash {
+	color: white;
+	background-color: CornflowerBlue;
+	text-align: center;
+	font-size: 12pt;
+}
+
+div#redips-drag #table2 {
+  /* align table to the right */
+  margin-left: auto;
+  
+}
+
+/* right table - td */
+#table2 td {
+  border: 2px #DDC5B5 solid;
+}
+
+/* left table - td */
+#table1 td {
+  border-width: 0px 0px 1px 0px;
+  border-color: white;
+}
+

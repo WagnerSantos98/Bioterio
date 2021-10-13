@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="assests/img/bioterio_mini.ico">
+    <title>Biotério - USF</title>
+    <!--Link-->
+    <link rel="stylesheet" href="../css/style_modal.css" type="text/css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--Script-->
+	<script type="text/javascript" src="js/redips-drag-min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body  onload="REDIPS.drag.init()">
+
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display: none;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Fechar &times;</button>
+        <a href="../index.html" class="w3-bar-item w3-button">Início</a>
+        <a href="#" class="w3-bar-item w3-button">Solicitação para Pesquisas</a>
+        <a href="#" class="w3-bar-item w3-button">Controle de Animais</a>
+        <a href="#" class="w3-bar-item w3-button">Sala dos Animais</a>
+        <hr class="solid">
+        <a href="../pages/controle_estoque.html" class="w3-bar-item w3-button">Controle de estoque</a>
+        <a href="#" class="w3-bar-item w3-button">Controle de Insumos</a>
+        <hr class="solid">
+        <a href="#" class="w3-bar-item w3-button">Relatórios</a>
+        <a href="#" class="w3-bar-item w3-button">Notificações</a>
+        <a href="#" class="w3-bar-item w3-button">Controle de Temp° e Umidade</a>
+        <div class="w3-dropdown-hover">
+            <button class="w3-button">Usuários <i class="fa fa-caret-down"></i></button>
+        <div class="w3-dropdown-content w3-bar-block">
+            <a href="../pages/cad_usuarios.html" class="w3-bar-item w3-button">Cadastro de usuário</a>
+            <a href="#" class="w3-bar-item w3-button">Níveis de acesso</a>
+        </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="w3-teal">
+            <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+            <div class="w3-container">
+                <h1>Biotério</h1>
+            </div>
+        </div>
+
+        <div class="w3-container">
+         <!--Table Gestão-->
+         <div class="w3-container">
+            <h1>Níveis de Acesso</h1>
+        </div>
+         <table class="w3-table w3-striped w3-bordered w3-card-4">
+             <thead>
+                 <tr class="w3-green">
+                    <th>Usuário</th>
+                    <th>Email</th>
+                    <th>Permissões</th>
+                 </tr>
+             </thead>
+             <tr>
+                 <td>Wagner</td>
+                 <td>wagnerjesus@usf.edu.br</td>
+                 <td><a class="button" onclick="document.getElementById('id01').style.display='block'"><i class="w3-xlarge fa fa-edit"></i></a></i></td>
+             </tr>            
+         </table>              
+    </div>
+
+    <!--Modal-->
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="usuario"><b>Usuário</b></label>
+      <input type="text" name="usuario" required>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" name="email" required>
+        
+      <label>
+        <input type="checkbox" id="opcao" name="adm">ADM</label>
+        <input type="checkbox" name="discentes">Discentes</label>
+        <input type="checkbox" name="docentes">Docentes</label>
+
+        <!--
+        <label>
+          <input type="checkbox" name="check" id="check"/> Clique aqui
+      </label>
+      <input type="optional" name="op1" id="opcao"/>
+    </div>
+        -->
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn success">Salvar</button>
+    </div>
+  </form>
+</div>
+
+<!--Script-->
+<script>
+    function w3_open(){
+        document.getElementById("main").style.marginLeft = "25%";
+        document.getElementById("mySidebar").style.width = "25%";
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("openNav").style.display = "none";
+    }
+    function w3_close(){
+        document.getElementById("main").style.marginLeft = "0%";
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("openNav").style.display = "inline-block"
+    }
+</script>
+
+<!--Script Modal-->
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<script>
+  $("#check").click(function(){
+	
+  if($(this).val()=="true"){
+    $("#opcao").css("invisible","hidden");
+    $(this).val("false");
+    }
+    else{
+        $("#opcao").css("visibility","visible");
+        $(this).val("true");
+      }
+    
+  
+  });
+</script>
+
+</body>
+
+</html>

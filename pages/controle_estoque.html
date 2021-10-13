@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="assests/img/bioterio_mini.ico">
+    <title>Biotério - USF</title>
+    <!--Link-->
+    <link rel="stylesheet" href="../css/style_menu.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--Script-->
+	<script type="text/javascript" src="js/redips-drag-min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</head>
+<body  onload="REDIPS.drag.init()">
+
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display: none;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Fechar &times;</button>
+        <a href="#" class="w3-bar-item w3-button">Início</a>
+        <a href="#" class="w3-bar-item w3-button">Solicitação para Pesquisas</a>
+        <a href="#" class="w3-bar-item w3-button">Controle de Animais</a>
+        <a href="#" class="w3-bar-item w3-button">Sala dos Animais</a>
+        <hr class="solid">
+        <a href="#" class="w3-bar-item w3-button">Controle de estoque</a>
+        <a href="#" class="w3-bar-item w3-button">Controle de Insumos</a>
+        <hr class="solid">
+        <a href="" class="w3-bar-item w3-button">Relatórios</a>
+        <a href="#" class="w3-bar-item w3-button">Notificações</a>
+        <a href="#" class="w3-bar-item w3-button">Controle de Temp° e Umidade</a>
+        <div class="w3-dropdown-hover">
+            <button class="w3-button">Usuários <i class="fa fa-caret-down"></i></button>
+        <div class="w3-dropdown-content w3-bar-block">
+            <a href="pages/cad_usuarios.html" class="w3-bar-item w3-button">Cadastro de usuário</a>
+            <a href="pages/conf.html" class="w3-bar-item w3-button">Níveis de acesso</a>
+        </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="w3-teal">
+            <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+            <div class="w3-container">
+                <h1>Biotério</h1>
+            </div>
+        </div>
+
+        <div class="w3-container">
+<!--Menu-->
+    <div class="tab">
+        <button class="tablinks" onclick="openEstoque(event, 'Produtos')">Produtos</button>
+        <button class="tablinks" onclick="openEstoque(event, 'Ajuste_Estoque')" style="float:right;">Ajuste de Estoque</button>
+    </div>
+
+    <div id="Produtos" class="tabcontent">
+        <h3>Produtos</h3>
+        <!--Cadastro_Produtos-->
+            <form action="#">
+                <label for="fnome">Nome</label>
+                <input type="text" id="fnome" name="Nome" placeholder="Nome">
+                
+                <label for="lcod">Código</label>
+                <input type="text" id="lcod" name="Codigo" placeholder="Código">
+            </form>
+    </div>
+
+    <div id="Ajuste_Estoque" class="tabcontent">
+        <h3>Ajuste de Estoque</h3>
+    </div>
+    
+            
+<!--Script-->
+<script>
+    function w3_open(){
+        document.getElementById("main").style.marginLeft = "25%";
+        document.getElementById("mySidebar").style.width = "25%";
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("openNav").style.display = "none";
+    }
+    function w3_close(){
+        document.getElementById("main").style.marginLeft = "0%";
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("openNav").style.display = "inline-block"
+    }
+</script>
+
+<!--Script openEstoque-->
+<script>
+    function openEstoque(evt, opEst){
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+            for(i = 0; i < tabcontent.length; i++){
+                tabcontent[i].style.display = "none";
+            }
+        tablinks = document.getElementsByClassName("tablinks");
+            for( i = 0; i < tablinks; i++){
+                tablinks[i].className.replace(" active", "");
+            }
+        document.getElementById(opEst).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+
+</body>
+
+</html>

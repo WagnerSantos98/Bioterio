@@ -7,14 +7,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="assests/img/bioterio_mini.ico">
     <title>Biotério - USF</title>
     <!--Link-->
-    <link rel="stylesheet" href="css/table.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/table.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!--Script-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/redips-drag-min.js"></script>
-    <script type="text/javascript" src="js/counter.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 </head>
 <body  onload="REDIPS.drag.init()">
 
@@ -23,7 +22,7 @@
         <a href="#" class="w3-bar-item w3-button">Início</a>
         <a href="#" class="w3-bar-item w3-button">Solicitação para Pesquisas</a>
         <a href="#" class="w3-bar-item w3-button">Controle de Animais</a>
-        <a href="pages/sala_animais.html" class="w3-bar-item w3-button">Sala dos Animais</a>
+        <a href="#" class="w3-bar-item w3-button">Sala dos Animais</a>
         <hr class="solid">
         <a href="pages/controle_estoque.html" class="w3-bar-item w3-button">Controle de estoque</a>
         <a href="#" class="w3-bar-item w3-button">Controle de Insumos</a>
@@ -52,52 +51,26 @@
             <!--Table-->
             <center>
                 <div>
-                    <h1>Gerenciamento de Animais</h1>
+                    <h1>Sala dos Animais</h1>
                 </div>
-            </center>
-        <div id="left">
             <div id="redips-drag">
-				<table id="table1">
+				<table>
 					<colgroup><col width="100"/><col width="100"/><col width="100"/><col width="100"/><col width="100"/><col width="100"/><col width="100"/><col width="100"/><col width="100"/></colgroup>
-					<tbody>
-                    <tr>
-                            <td></td>
-                            <th id="A">A</th>
-                            <th>B</th>
-                            <th>C</th>
-                            <th>D</th>
-                            <th>E</th>
-                            <th>F</th>
-                            <th>G</th>
-                            <th>H</th>
-						</tr>
-                        
 						<tr>
-							<th>1</th>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="totalA1" onblur="Soma()"/></div></td>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="totalB1" onblur="Soma()"/></div></td>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="totalC1" onblur="Soma()"/></div></td>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="toatalD1" onblur="Soma()"/></div></td>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="toatalE1" onblur="Soma()"/></div></td>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="toatalF1" onblur="Soma()"/></div></td>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="toatalG1" onblur="Soma()"/></div></td>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="toatalH1" onblur="Soma()"/></div></td>
+                            <td></td>
+                            <td>A</td>
+                            <td>B</td>
+                            <td>C</td>
+                            <td>D</td>
+                            <td>E</td>
+                            <td>F</td>
+                            <td>G</td>
+                            <td>H</td>
 						</tr>
 						<tr>
-							<th>2</th>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="totalA2" onblur="Soma()"/></div></td>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="totalB2" onblur="Soma()"/></div></td>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="totalC2" onblur="Soma()"/></div></td>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="toatalD2" onblur="Soma()"/></div></td>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="toatalE2" onblur="Soma()"/></div></td>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="toatalF2" onblur="Soma()"/></div></td>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="toatalG2" onblur="Soma()"/></div></td>
-                            <td><div class="redips-drag"><input type="text" class="totais" id="toatalH2" onblur="Soma()"/></div></td>
-						</tr>
-                        <tr>
-							<th>3</th>
-                            <td></td>
-                            <td></td>
+							<td>1</td>
+                            <td><div class="redips-drag">5</div></td>
+                            <td><div class="redips-drag"><input type="text" /></div></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -105,10 +78,10 @@
                             <td></td>
                             <td></td>
 						</tr>
-                        <tr>
-							<th>4</th>
+						<tr>
+							<td>2</td>
                             <td></td>
-                            <td></td>
+                            <td><div class="redips-drag">10</div></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -117,7 +90,7 @@
                             <td></td>
 						</tr>
                         <tr>
-							<th>5</th>
+							<td>3</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -128,7 +101,7 @@
                             <td></td>
 						</tr>
                         <tr>
-							<th>6</th>
+							<td>4</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -139,7 +112,7 @@
                             <td></td>
 						</tr>
                         <tr>
-							<th>7</th>
+							<td>5</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -149,32 +122,32 @@
                             <td></td>
                             <td></td>
 						</tr>
-                    </tbody>
+                        <tr>
+							<td>6</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+						</tr>
+                        <tr>
+							<td>7</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+						</tr>
 				</table>
-                <div><label>Total Geral <input type="text" id="final" disabled="disabled"></label></div>
-                
-                <div id="right" class="fab">
-                    <table id="table2">
-                        <colgroup>
-                            <col width="150"/>
-                            <col width="150"/>
-                        </colgroup>
-                        <tbody>
-                        <tr>
-                            <th class="redips-trash"><i class="fa fa-trash"> Excluir</i></th>
-                            <th class=""><i class="fa fa-plus"> Adicionar</i></th>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                
-                
 			</div>
-
-        </div>
+        </center>
             <!--Buttons-->
-        
             
     </div>
 

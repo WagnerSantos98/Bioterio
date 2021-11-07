@@ -23,7 +23,7 @@
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display: none;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Fechar &times;</button>
         <a href="../index.html" class="w3-bar-item w3-button">Início</a>
-        <a href="#" class="w3-bar-item w3-button">Solicitação para Pesquisas</a>
+        <a href="../pages/solicitacao_pesq.html" class="w3-bar-item w3-button">Solicitação para Pesquisas</a>
         <a href="#" class="w3-bar-item w3-button">Controle de Animais</a>
         <a href="#" class="w3-bar-item w3-button">Sala dos Animais</a>
         <hr class="solid">
@@ -88,17 +88,24 @@
       <input type="text" name="email" required>
         
       <label>
-        <input type="checkbox" id="opcao" name="adm">ADM</label>
-        <input type="checkbox" name="discentes">Discentes</label>
-        <input type="checkbox" name="docentes">Docentes</label>
+        <input type="checkbox" id="opcao_adm" name="adm"> ADM</label>
+        <input type="checkbox" id="opcao_discentes" name="discentes"> Discentes</label>
+        <input type="checkbox" id="opcao_docentes" name="docentes"> Docentes</label>
+    </div>
 
     <div id="est">
-        <div class="row">
             <div class="container">
-                <input id="instituicao" type="text" class="validate">
-                <label for="instituicao">Instituição</label>
+                <h4 for="instituicao">Permissões</h4>
+                <label>Solicitação para Pesquisas <input type="checkbox"></label><br>
+                <label>Controle de Animais <input type="checkbox"></label><br>
+                <label>Sala dos Animais <input type="checkbox"></label><br>
+                <label>Controle de Estoque <input type="checkbox"></label><br>
+                <label>Controle de Insumos <input type="checkbox"></label><br>
+                <label>Relatórios <input type="checkbox"></label><br>
+                <label>Notificações <input type="checkbox"></label><br>
+                <label>Controle de Temp° e Umidade <input type="checkbox"></label><br>
+                <label>Usuários <input type="checkbox"></label>
             </div>
-        </div>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
@@ -140,7 +147,23 @@
   $(document).ready(function(){
     $("#est").hide();
 
-  $("#opcao").click(function(){
+  $("#opcao_adm").click(function(){
+    $("#est").slideToggle(600);
+  });
+  });
+
+  $(document).ready(function(){
+    $("#est").hide();
+
+  $("#opcao_discentes").click(function(){
+    $("#est").slideToggle(600);
+  });
+  });
+
+  $(document).ready(function(){
+    $("#est").hide();
+
+  $("#opcao_docentes").click(function(){
     $("#est").slideToggle(600);
   });
   });

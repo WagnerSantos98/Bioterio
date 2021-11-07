@@ -13,8 +13,10 @@
 
     <!--Script-->
 	<script type="text/javascript" src="js/redips-drag-min.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body  onload="REDIPS.drag.init()">
 
@@ -90,13 +92,15 @@
         <input type="checkbox" name="discentes">Discentes</label>
         <input type="checkbox" name="docentes">Docentes</label>
 
-        <!--
-        <label>
-          <input type="checkbox" name="check" id="check"/> Clique aqui
-      </label>
-      <input type="optional" name="op1" id="opcao"/>
+    <div id="est">
+        <div class="row">
+            <div class="container">
+                <input id="instituicao" type="text" class="validate">
+                <label for="instituicao">Instituição</label>
+            </div>
+        </div>
     </div>
-        -->
+
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn success">Salvar</button>
     </div>
@@ -131,19 +135,14 @@
     }
 </script>
 
+<!--Script Checkbox Show/Hide-->
 <script>
-  $("#check").click(function(){
-	
-  if($(this).val()=="true"){
-    $("#opcao").css("invisible","hidden");
-    $(this).val("false");
-    }
-    else{
-        $("#opcao").css("visibility","visible");
-        $(this).val("true");
-      }
-    
-  
+  $(document).ready(function(){
+    $("#est").hide();
+
+  $("#opcao").click(function(){
+    $("#est").slideToggle(600);
+  });
   });
 </script>
 

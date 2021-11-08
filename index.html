@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/table.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <!--Script-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -43,11 +45,51 @@
     <div id="main">
         <div class="w3-teal">
             <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-            <div class="w3-container">
-                <h1>Biotério</h1>
+            
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx">
+                        <img src="assests/img/user.jfif">
+                    </div>
+                    <h2>Wagner Santos<br><span>Website Designer</span></h2>
+                </div>
+               <ul class="navigation">
+                   <li>
+                       <a href="#">
+                        <ion-icon name="person-outline"></ion-icon>   
+                        Editar perfil</a>
+                   </li>
+                   <li>
+                    <a href="#">
+                        <ion-icon name="notifications-outline"></ion-icon>
+                        Notificações</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <ion-icon name="settings-outline"></ion-icon>
+                        Configurações</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <ion-icon name="help-circle-outline"></ion-icon>
+                        Suporte</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                        Sair</a>
+                </li>
+               </ul>
+               <div class="toggle">
+                <ion-icon name="chevron-down-outline"></ion-icon>
+               </div>
             </div>
-        </div>
+        
 
+        </div>
+    </div>
+
+    
         <div class="w3-container">
             <!--Table-->
             <center>
@@ -190,6 +232,34 @@
         document.getElementById("main").style.marginLeft = "0%";
         document.getElementById("mySidebar").style.display = "none";
         document.getElementById("openNav").style.display = "inline-block"
+    }
+</script>
+
+<script>
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Fechar menu
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+<script>
+    const card = document.querySelector('.card');
+    const cardtoogle = document.querySelector('.toggle');
+    cardtoogle.onclick = function(){
+        card.classList.toggle('active');
     }
 </script>
 

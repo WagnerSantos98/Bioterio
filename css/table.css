@@ -1,6 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@200;300;400;500;700&display=swap");
+
 body {
-	font-family: arial;
-	margin: 0px;
+	font-family: 'Ubuntu', sans-serif;
+	margin: 0;
+  padding: 0;
+  box-shadow: border-box;
+}
+
+.w3-teal{
+  height: 110px;
 }
 
 /* table */
@@ -47,123 +55,10 @@ input{
 	background-color: white;
 }
 
-
 /* Cálculos células */
 .total{
 	float:left;
   }
-
-/* Menu Fkutuante */
-.fab{
-  position: fixed;
-  bottom:10px;
-  right:10px;
-}
-
-.fab button{
-  cursor: pointer;
-  width: 48px;
-  height: 48px;
-  border-radius: 30px;
-  background-color: #cb60b3;
-  border: none;
-  box-shadow: 0 1px 5px rgba(0,0,0,.4);
-  font-size: 24px;
-  color: white;
-    
-  -webkit-transition: .2s ease-out;
-  -moz-transition: .2s ease-out;
-  transition: .2s ease-out;
-}
-
-.fab button.main{
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  border-radius: 30px;
-  background-color: #009688;
-  right: 0;
-  bottom: 0;
-  z-index: 20;
-}
-
-.fab button.main:before{
-  content: '⏚';
-}
-
-.fab ul{
-  position:absolute;
-  bottom: 0;
-  right: 0;
-  padding:0;
-  padding-right:5px;
-  margin:0;
-  list-style:none;
-  z-index:10;
-  
-  -webkit-transition: .2s ease-out;
-  -moz-transition: .2s ease-out;
-  transition: .2s ease-out;
-}
-
-.fab ul li{
-  display: flex;
-  justify-content: flex-start;
-  position: relative;
-  margin-bottom: -10%;
-  opacity: 0;
-  
-  -webkit-transition: .3s ease-out;
-  -moz-transition: .3s ease-out;
-  transition: .3s ease-out;
-}
-
-.fab ul li label{
-  margin-right:10px;
-  white-space: nowrap;
-  display: block;
-  margin-top: 10px;
-  padding: 5px 8px;
-  background-color: white;
-  box-shadow: 0 1px 3px rgba(0,0,0,.2);
-  border-radius:3px;
-  height: 18px;
-  font-size: 16px;
-  pointer-events: none;
-  opacity:0;
-  
-  -webkit-transition: .2s ease-out;
-  -moz-transition: .2s ease-out;
-  transition: .2s ease-out;
-}
-
-.fab button.main:active,
-.fab button.main:focus{
-  outline: none;
-  background-color: #009688;
-  box-shadow: 0 3px 8px rgba(0,0,0,.5);
- }
- 
-.fab button.main:active:before,
-.fab button.main:focus:before{
-  content: '↑';
-}
-
-.fab button.main:active + ul,
-.fab button.main:focus + ul{
-  bottom: 70px;
-}
-
-.fab button.main:active + ul li,
-.fab button.main:focus + ul li{
-  margin-bottom: 10px;
-  opacity: 1;
-}
-
-.fab button.main:active + ul li:hover label,
-.fab button.main:focus + ul li:hover label{
-  opacity: 1;
-}
 
 /* trash cell */
 .redips-trash {
@@ -190,3 +85,110 @@ div#redips-drag #table2 {
   border-color: white;
 }
 
+
+/* Perfil */
+.card{
+  position: absolute;
+  width: 350px;
+  height: 110px;
+  top: 6px;
+  margin-left: 77%;
+  background: transparent;
+  padding: 20px;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
+
+.card.active{
+  height: 400px;
+  box-shadow: 0 50px 50px rgba(0,0,0,0.2);
+}
+
+.card .content{
+  display: flex;
+  align-items: center;
+}
+
+.card .content .imgBx{
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card .content .imgBx img{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .content h2{
+  margin-left: 15px;
+  font-size:  1.3em;
+  color: #fff;
+}
+
+.card .content h2 span{
+  font-size: 0.8em;
+  font-weight: 400;
+  color: #fff;
+}
+
+.navigation{
+  position: relative;
+  top: 25px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding: 20px 0;
+}
+
+.navigation li{
+  list-style: none;
+  margin: 15px 0;
+}
+
+.navigation li a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #555;
+  font-size: 1.1em;
+  transition: color 0.25s;
+}
+
+.navigation li a:hover{
+  color: #006b2d;
+}
+
+.navigation li a ion-icon{
+  font-size: 1.6em;
+  margin-right: 15px;
+}
+
+.toggle{
+  position: absolute;
+  width: 40px;
+  bottom: 0;
+  right: 0;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.toggle ion-icon{
+  color:#fff;
+  font-size: 1.4em;
+  transition: transform ease-in-out 0.5s;
+}
+
+.card.active .toggle ion-icon{
+  transform: rotate(-180deg);
+  color:#111;
+ 
+}
